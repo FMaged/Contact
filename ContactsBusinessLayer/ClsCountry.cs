@@ -66,9 +66,9 @@ namespace ContactsBusinessLayer
 
         }
         
-        public static DataTable GetAllContacts()
+        public static DataTable GetAllCountries()
         {
-            return ClsContactsDataAccess.GetAllContacts();
+            return ClsCountryData.GetAllCountries();
         }
     
     }
