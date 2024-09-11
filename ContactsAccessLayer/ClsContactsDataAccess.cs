@@ -197,5 +197,35 @@ namespace ContactsAccessLayer
 
         }
 
+
+        public static DataTable GetAllContact()
+        {
+            DataTable dataTable = new DataTable();
+            SqlConnection connection = new SqlConnection(ClsDataAccessSitting.ConnectionString);
+            string Query = "SELECT * FROM Contacts";
+            SqlCommand cmd = new SqlCommand(Query, connection);
+            try
+            {
+                connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    dataTable.Load(reader);
+                }
+                reader.Close();
+
+            }
+            catch (Exception ex)
+            {
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return dataTable;
+        }
+
+
+
     }
 }
