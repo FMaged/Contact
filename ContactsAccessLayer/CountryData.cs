@@ -210,6 +210,29 @@ namespace ContactsAccessLayer
             return table;
         }
 
+        public static bool IsCountryExist(string CountryName)
+        {
+            bool IsFound=false;
+            SqlConnection connection = new SqlConnection(ClsDataAccessSitting.ConnectionString) ;
+            string Query = "SELECT Found=1 FROM Countries WHERE CountryName=@CountryName";
+            SqlCommand command = new SqlCommand(Query, connection);
+            command.Parameters.AddWithValue("@CountryName", CountryName);
+            try
+            {
+                connection.Open();
+                IsFound = command.ExecuteScalar() != null ? true : false;
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return IsFound;
+        }
 
     }
 }
