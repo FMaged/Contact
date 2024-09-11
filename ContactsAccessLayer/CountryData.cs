@@ -182,7 +182,33 @@ namespace ContactsAccessLayer
 
         }
 
-
+        public static DataTable GetAllCountries()
+        {
+            DataTable table = new DataTable();
+            SqlConnection connection = new SqlConnection(ClsDataAccessSitting.ConnectionString);
+            string Query = "SELECT * FROM Countries";
+            SqlCommand cmd = new SqlCommand(Query, connection);
+            try
+            {
+                connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    table.Load(reader);
+                }
+                reader.Close();
+                
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: ", ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return table;
+        }
 
 
     }
