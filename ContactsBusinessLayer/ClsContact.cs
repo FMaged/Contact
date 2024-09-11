@@ -121,6 +121,13 @@ namespace ContactsBusinessLayer
                 default:
                     return false;
             }
+
         }
+
+        public static DataTable GetAllContacts()
+        {
+            return ClsContactsDataAccess.GetAllContact();
+        }
+
     }
 }
