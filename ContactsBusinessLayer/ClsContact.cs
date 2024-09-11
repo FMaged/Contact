@@ -105,8 +105,19 @@ namespace ContactsBusinessLayer
 
                         return false;
                     }
+
                 case enMode.Update:
-                    return _UpdateContact();
+                    if (_UpdateContact())
+                    {
+                        Mode = enMode.Update;
+                        return true;
+
+                    }
+                    else
+                    {
+
+                        return false;
+                    }
                 default:
                     return false;
             }

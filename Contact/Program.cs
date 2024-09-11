@@ -88,9 +88,24 @@ namespace ContactsConslApp
 
         }
 
+        static void AddNewCountry(string CountryName)
+        {
+            ClsCountry Country = new ClsCountry();
+            Country.CountryName = CountryName;
+            if (Country.Save())
+            {
+                Console.WriteLine("Saved!  ID="+Country.ID);
+            }
+            else
+            {
+                Console.WriteLine("Not!!!");
+            }
+        }
+
         static void Main(string[] args)
         {
-            FindContat(8);
+            AddNewCountry("Jaban");
+           // FindContat(8);
             //UpdateContact(  7,"Ali","Mah","Mom@m.de","109237315","123  samStr",
             //               new DateTime(2008,12,1,10,30,00),1,"");
             //DeleteContact(15);
