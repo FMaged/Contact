@@ -92,7 +92,17 @@ namespace ContactsConslApp
                 Console.WriteLine($"{row["ContactID"]}: {row["FirstName"]} {row["LastName"]}");
             }
         }
-
+        static void IsContactExist(int ID)
+        {
+            if (ClsContact.IsContactExist(ID))
+            {
+                Console.WriteLine("Exist!");
+            }
+            else
+            {
+                Console.WriteLine("Not!!");
+            }
+        }
 
 
 
@@ -117,12 +127,26 @@ namespace ContactsConslApp
                 Console.WriteLine($"{row["CountryID"]}, {row["CountryName"]} ");
             }
         }
+        static void IsCountryExist(string CountryName)
+        {
+            if (ClsCountry.IsCountryExist(CountryName))
+            {
+                Console.WriteLine("Exist!");
+            }
+            else
+            {
+                Console.WriteLine("Not!!");
+            }
+        }
+
         static void Main(string[] args)
         {
             //ListContact();
-            ListCountries();
-
-
+            //ListCountries();
+            //IsContactExist(100);
+            //IsCountryExist("Syria");
+            
+            
             //AddNewCountry("Jaban");
            // FindContat(8);
             //UpdateContact(  7,"Ali","Mah","Mom@m.de","109237315","123  samStr",

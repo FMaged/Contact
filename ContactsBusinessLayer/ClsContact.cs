@@ -131,7 +131,7 @@ namespace ContactsBusinessLayer
 
         public static bool IsContactExist(int ID)
         {
-            return ClsContact.IsContactExist(ID);
+            return ClsContactsDataAccess.IsContactExist(ID);
         }
     }
 }

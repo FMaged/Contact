@@ -229,17 +229,19 @@ namespace ContactsAccessLayer
         {
             bool IsFound=false;
             SqlConnection connection = new SqlConnection(ClsDataAccessSitting.ConnectionString) ;
-            string Query = "SELECT Found=1 FROM Contacts WHERE ContactID=@ContactID";
+            string Query = "SELECT 1 FROM Contacts WHERE ContactID=@ContactID";
             SqlCommand command = new SqlCommand(Query, connection);
-            command.Parameters.AddWithValue("@ContactID", ContactId);
+            command.Parameters.Add("@ContactID",SqlDbType.Int).Value = ContactId;
             try
             {
                 connection.Open();
-                IsFound = command.ExecuteScalar() != null ? true : false;
+                var result = command.ExecuteScalar();
+                IsFound=(result!=null);
             }
             catch (Exception ex)
             {
                 Console.WriteLine("Error: " + ex.Message);
+                IsFound = false;
             }
             finally
             {

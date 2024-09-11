@@ -73,7 +73,7 @@ namespace ContactsBusinessLayer
 
         public static bool IsCountryExist(string contactName)
         {
-            return ClsCountry.IsCountryExist(contactName);
+            return ClsCountryData.IsCountryExist(contactName);
         }
     }
 }
