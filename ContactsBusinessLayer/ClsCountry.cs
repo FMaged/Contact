@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using ContactsAccessLayer;
 
 namespace ContactsBusinessLayer
@@ -65,7 +66,10 @@ namespace ContactsBusinessLayer
 
         }
         
-
+        public static DataTable GetAllContacts()
+        {
+            return ClsContactsDataAccess.GetAllContacts();
+        }
     
     }
 }
