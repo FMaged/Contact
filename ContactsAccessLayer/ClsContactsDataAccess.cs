@@ -225,7 +225,28 @@ namespace ContactsAccessLayer
             return dataTable;
         }
 
-
+        public static bool IsContactExist(int ContactId)
+        {
+            bool IsFound=false;
+            SqlConnection connection = new SqlConnection(ClsDataAccessSitting.ConnectionString) ;
+            string Query = "SELECT Found=1 FROM Contacts WHERE ContactID=@ContactID";
+            SqlCommand command = new SqlCommand(Query, connection);
+            command.Parameters.AddWithValue("@ContactID", ContactId);
+            try
+            {
+                connection.Open();
+                IsFound = command.ExecuteScalar() != null ? true : false;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return IsFound;
+        }
 
     }
 }
