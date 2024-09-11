@@ -109,11 +109,18 @@ namespace ContactsConslApp
                 Console.WriteLine("Not!!!");
             }
         }
-
+        static void ListCountries()
+        {
+            DataTable tb = ClsCountry.GetAllCountries();
+            foreach (DataRow row in tb.Rows)
+            {
+                Console.WriteLine($"{row["CountryID"]}, {row["CountryName"]} ");
+            }
+        }
         static void Main(string[] args)
         {
-            ListContact();
-
+            //ListContact();
+            ListCountries();
 
 
             //AddNewCountry("Jaban");
