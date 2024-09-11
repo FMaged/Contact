@@ -85,8 +85,16 @@ namespace ContactsConslApp
         }
         static void ListContact()
         {
-
+            DataTable dt = ClsContact.GetAllContacts();
+            Console.WriteLine("DataTable");
+            foreach (DataRow row in dt.Rows)
+            {
+                Console.WriteLine($"{row["ContactID"]}: {row["FirstName"]} {row["LastName"]}");
+            }
         }
+
+
+
 
         static void AddNewCountry(string CountryName)
         {
@@ -104,7 +112,11 @@ namespace ContactsConslApp
 
         static void Main(string[] args)
         {
-            AddNewCountry("Jaban");
+            ListContact();
+
+
+
+            //AddNewCountry("Jaban");
            // FindContat(8);
             //UpdateContact(  7,"Ali","Mah","Mom@m.de","109237315","123  samStr",
             //               new DateTime(2008,12,1,10,30,00),1,"");
