@@ -33,7 +33,7 @@ namespace ContactsAccessLayer
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error: " + ex.Message);
+                //Console.WriteLine("Error: " + ex.Message);
                 isFound = false;
             }
             finally
@@ -69,7 +69,7 @@ namespace ContactsAccessLayer
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error: " + ex.Message);
+                //Console.WriteLine("Error: " + ex.Message);
                 isFound = false;
             }
             finally
@@ -104,7 +104,7 @@ namespace ContactsAccessLayer
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error: " + ex.Message);
+                //Console.WriteLine("Error: " + ex.Message);
             }
             finally
             {
@@ -131,7 +131,7 @@ namespace ContactsAccessLayer
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error: " + ex.Message);
+                //Console.WriteLine("Error: " + ex.Message);
                 return false;
             }
             finally
@@ -168,7 +168,7 @@ namespace ContactsAccessLayer
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error: ", ex.Message);
+                //Console.WriteLine("Error: ", ex.Message);
             }
             finally
             {
@@ -201,7 +201,7 @@ namespace ContactsAccessLayer
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error: ", ex.Message);
+                //Console.WriteLine("Error: ", ex.Message);
             }
             finally
             {
@@ -225,7 +225,7 @@ namespace ContactsAccessLayer
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error: " + ex.Message);
+                //Console.WriteLine("Error: " + ex.Message);
             }
             finally
             {
@@ -233,6 +233,7 @@ namespace ContactsAccessLayer
             }
             return IsFound;
         }
+        
 
     }
 }

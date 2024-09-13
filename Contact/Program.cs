@@ -144,10 +144,10 @@ namespace ContactsConslApp
             //ListContact();
             //ListCountries();
             //IsContactExist(100);
-            //IsCountryExist("Syria");
+            IsCountryExist("Syria");
             
             
-            //AddNewCountry("Jaban");
+            //AddNewCountry("Jaban"); 
            // FindContat(8);
             //UpdateContact(  7,"Ali","Mah","Mom@m.de","109237315","123  samStr",
             //               new DateTime(2008,12,1,10,30,00),1,"");

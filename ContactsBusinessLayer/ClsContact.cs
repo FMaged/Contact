@@ -86,7 +86,7 @@ namespace ContactsBusinessLayer
         static public bool DeleteContact(int ID)
         {
             return ClsContactsDataAccess.DeleteContact(ID);
-
+            
 
         }
         public bool Save()
