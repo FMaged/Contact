@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactsBusinessLayer", "..
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactsAccessLayer", "..\ContactsAccessLayer\ContactsAccessLayer.csproj", "{7DD4DA5D-16EE-47B3-B717-11990DF3004E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinFormContact", "..\WinFormContact\WinFormContact.csproj", "{1045525A-E0CE-4FE8-8632-C4FC35DF44F3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{7DD4DA5D-16EE-47B3-B717-11990DF3004E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7DD4DA5D-16EE-47B3-B717-11990DF3004E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7DD4DA5D-16EE-47B3-B717-11990DF3004E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1045525A-E0CE-4FE8-8632-C4FC35DF44F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1045525A-E0CE-4FE8-8632-C4FC35DF44F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1045525A-E0CE-4FE8-8632-C4FC35DF44F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1045525A-E0CE-4FE8-8632-C4FC35DF44F3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
