@@ -7,7 +7,7 @@ namespace ContactsAccessLayer
 {
     public class ClsCountryData
     {
-        public static bool getCountryInfoByID(int Id, ref string CountryName)
+        public static bool getCountryInfoByID(int Id, ref string CountryName, ref string Code,ref string PhoneCode)
         {
             bool isFound = false;
 
@@ -43,7 +43,7 @@ namespace ContactsAccessLayer
             return isFound;
         }
 
-        public static bool getCountryInfoByName(string CountryName, ref int Id)
+        public static bool getCountryInfoByName(string CountryName, ref int Id,ref string Code,ref string PhoneCode)
         {
             bool isFound = false;
 

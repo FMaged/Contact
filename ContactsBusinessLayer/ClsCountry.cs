@@ -10,7 +10,9 @@ namespace ContactsBusinessLayer
         public enMode Mode = enMode.AddNew;
         public int ID { get; set; }
         public string CountryName { get; set; }
-        
+        public string Code { set; get; }
+        public string PhoneCode { set; get; }
+
         public ClsCountry()
         {
             ID = -1;
@@ -18,10 +20,12 @@ namespace ContactsBusinessLayer
             Mode = enMode.AddNew;
 
         }
-        private ClsCountry(int iD,string countryName)
+        private ClsCountry(int iD,string countryName,string Code,string PhoneCode)
         {
-            ID = iD;
-            CountryName = countryName;
+            this.ID = iD;
+            this.CountryName = countryName;
+            this.Code = Code;
+            this.PhoneCode = PhoneCode;
         }
         private bool _AddNewCountry(string countryName)
         {
@@ -75,5 +79,43 @@ namespace ContactsBusinessLayer
         {
             return ClsCountryData.IsCountryExist(contactName);
         }
+        
+        public static ClsCountry Find(int ID)
+        {
+            string CountryName = "";
+            string Code = "";
+            string PhoneCode = "";
+
+            
+            if(ClsCountryData.getCountryInfoByID(ID,ref  CountryName,ref  Code,ref PhoneCode))
+            {
+                return new ClsCountry(ID,CountryName,Code,PhoneCode);
+
+            }else
+            {
+                return null;
+
+            }
+
+        }
+
+        public static ClsCountry Find(string countryName)
+        {
+            int ID = -1;
+            string Code = "";
+            string PhoneCode = "";
+
+            if (ClsCountryData.getCountryInfoByName(countryName, ref ID, ref Code, ref PhoneCode))
+            {
+                return new ClsCountry(ID, countryName, Code, PhoneCode);
+            }
+            else
+            {
+                return null;
+            }
+
+        }
+
+
     }
 }

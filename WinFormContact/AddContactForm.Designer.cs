@@ -93,6 +93,7 @@
             this.lblContact_ID.Size = new System.Drawing.Size(45, 25);
             this.lblContact_ID.TabIndex = 4;
             this.lblContact_ID.Text = "???";
+            this.lblContact_ID.Click += new System.EventHandler(this.lblContact_ID_Click);
             // 
             // label3
             // 
@@ -225,8 +226,7 @@
             this.btnClose.TabIndex = 30;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.button1_Click);
-            // 
+        // 
             // btnSave
             // 
             this.btnSave.Location = new System.Drawing.Point(315, 585);
