@@ -30,21 +30,13 @@ namespace WinFormContact
 
 
 
-        private void editeToolStripMenuItem_Click(object sender, EventArgs e)
+
+
+        private void editeToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            AddContactForm addContactForm = new AddContactForm((int) dgvAllContacts.CurrentRow.Cells[0].Value);
+            AddContactForm addContactForm = new AddContactForm((int)dgvAllContacts.CurrentRow.Cells[0].Value);
             addContactForm.ShowDialog();
             _RefreshContactList();
-        }
-
-        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
-        {
-
         }
     }
 }

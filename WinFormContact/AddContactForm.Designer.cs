@@ -45,7 +45,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.cbxCountry = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.tbxAddress = new System.Windows.Forms.TextBox();
+            this.txbAddress = new System.Windows.Forms.TextBox();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -93,8 +93,7 @@
             this.lblContact_ID.Size = new System.Drawing.Size(45, 25);
             this.lblContact_ID.TabIndex = 4;
             this.lblContact_ID.Text = "???";
-            this.lblContact_ID.Click += new System.EventHandler(this.lblContact_ID_Click);
-            // 
+          // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -210,13 +209,13 @@
             this.label7.TabIndex = 28;
             this.label7.Text = "Address";
             // 
-            // tbxAddress
+            // txbAddress
             // 
-            this.tbxAddress.Location = new System.Drawing.Point(187, 413);
-            this.tbxAddress.Multiline = true;
-            this.tbxAddress.Name = "tbxAddress";
-            this.tbxAddress.Size = new System.Drawing.Size(200, 130);
-            this.tbxAddress.TabIndex = 29;
+            this.txbAddress.Location = new System.Drawing.Point(187, 413);
+            this.txbAddress.Multiline = true;
+            this.txbAddress.Name = "txbAddress";
+            this.txbAddress.Size = new System.Drawing.Size(200, 130);
+            this.txbAddress.TabIndex = 29;
             // 
             // btnClose
             // 
@@ -226,7 +225,8 @@
             this.btnClose.TabIndex = 30;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
-        // 
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
             // btnSave
             // 
             this.btnSave.Location = new System.Drawing.Point(315, 585);
@@ -235,6 +235,7 @@
             this.btnSave.TabIndex = 31;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // pictureBox1
             // 
@@ -256,7 +257,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnClose);
-            this.Controls.Add(this.tbxAddress);
+            this.Controls.Add(this.txbAddress);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.cbxCountry);
             this.Controls.Add(this.label6);
@@ -303,7 +304,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox cbxCountry;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox tbxAddress;
+        private System.Windows.Forms.TextBox txbAddress;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.PictureBox pictureBox1;

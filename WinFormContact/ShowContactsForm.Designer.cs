@@ -43,12 +43,13 @@
             this.dgvAllContacts.AllowUserToDeleteRows = false;
             this.dgvAllContacts.AllowUserToOrderColumns = true;
             this.dgvAllContacts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAllContacts.Location = new System.Drawing.Point(0, 3);
+            this.dgvAllContacts.ContextMenuStrip = this.contextMenuStrip1;
+            this.dgvAllContacts.Location = new System.Drawing.Point(-63, 3);
             this.dgvAllContacts.Name = "dgvAllContacts";
             this.dgvAllContacts.ReadOnly = true;
             this.dgvAllContacts.RowHeadersWidth = 62;
             this.dgvAllContacts.RowTemplate.Height = 29;
-            this.dgvAllContacts.Size = new System.Drawing.Size(1551, 441);
+            this.dgvAllContacts.Size = new System.Drawing.Size(1614, 441);
             this.dgvAllContacts.TabIndex = 0;
             // 
             // contextMenuStrip1
@@ -59,21 +60,19 @@
             this.deleteToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(241, 101);
-            this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
             // 
             // editeToolStripMenuItem
             // 
             this.editeToolStripMenuItem.Name = "editeToolStripMenuItem";
             this.editeToolStripMenuItem.Size = new System.Drawing.Size(240, 32);
             this.editeToolStripMenuItem.Text = "Edite";
-            this.editeToolStripMenuItem.Click += new System.EventHandler(this.editeToolStripMenuItem_Click);
+            this.editeToolStripMenuItem.Click += new System.EventHandler(this.editeToolStripMenuItem_Click_1);
             // 
             // deleteToolStripMenuItem
             // 
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
             this.deleteToolStripMenuItem.Size = new System.Drawing.Size(240, 32);
             this.deleteToolStripMenuItem.Text = "Delete";
-            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
             // 
             // ShowContactsForm
             // 
