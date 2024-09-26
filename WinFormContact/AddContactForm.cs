@@ -76,8 +76,8 @@ namespace WinFormContact
             pkrDateOfBirth.Value= _Contact.DateOfBirth;
 
             //this will select the country in the combobox.
-            cbxCountry.SelectedIndex = cbxCountry.FindString(_Contact.CountryID.ToString());
-
+            cbxCountry.SelectedIndex = cbxCountry.FindString("Germany");
+            MessageBox.Show(_Contact.CountryID.ToString());
 
 
 
