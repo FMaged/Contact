@@ -10,7 +10,9 @@ namespace ContactsBusinessLayer
         public enMode Mode = enMode.AddNew;
         public int ID { get; set; }
         public string CountryName { get; set; }
-        
+        public string Code { set; get; }
+        public string PhoneCode { set; get; }
+
         public ClsCountry()
         {
             ID = -1;
@@ -18,19 +20,55 @@ namespace ContactsBusinessLayer
             Mode = enMode.AddNew;
 
         }
-        private ClsCountry(int iD,string countryName)
+        private ClsCountry(int iD,string countryName, string Code, string PhoneCode)
         {
-            ID = iD;
-            CountryName = countryName;
+            this.ID = iD;
+            this.CountryName = countryName;
+            this.Code = Code;
+            this.PhoneCode = PhoneCode;
+
         }
-        private bool _AddNewCountry(string countryName)
+        private bool _AddNewCountry()
         {
-            this.ID = ClsCountryData.addNewCountry(countryName);
+            this.ID = ClsCountryData.addNewCountry(this.CountryName,this.Code,this.PhoneCode);
             return (ID != -1);
         }
         private bool _UpdateCountry()
         {
-            return ClsCountryData.updateCountry(this.ID,this.CountryName);
+            return ClsCountryData.updateCountry(this.ID,this.CountryName,this.Code,this.PhoneCode);
+        }
+        public static ClsCountry Find(int ID)
+        {
+
+            string CountryName = "";
+            string Code = "";
+            string PhoneCode = "";
+
+
+            int CountryID = -1;
+
+            if (ClsCountryData.getCountryInfoByID(ID, ref CountryName, ref Code, ref PhoneCode))
+
+                return new ClsCountry(ID, CountryName, Code, PhoneCode);
+            else
+                return null;
+
+        }
+
+        public static ClsCountry Find(string CountryName)
+        {
+
+            int ID = -1;
+            string Code = "";
+            string PhoneCode = "";
+
+
+            if (ClsCountryData.getCountryInfoByName(CountryName, ref ID, ref Code, ref PhoneCode))
+
+                return new ClsCountry(ID, CountryName, Code, PhoneCode);
+            else
+                return null;
+
         }
 
         public bool Save()
@@ -38,7 +76,7 @@ namespace ContactsBusinessLayer
             switch (Mode)
             {
                 case enMode.AddNew:
-                    if (_AddNewCountry(this.CountryName))
+                    if (_AddNewCountry())
                     {
                         Mode = enMode.Update;
                         return true;
