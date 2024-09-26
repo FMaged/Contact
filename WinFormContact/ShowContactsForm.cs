@@ -38,5 +38,18 @@ namespace WinFormContact
             addContactForm.ShowDialog();
             _RefreshContactList();
         }
+
+        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (ClsContact.DeleteContact((int)dgvAllContacts.CurrentRow.Cells[0].Value))
+            {
+                MessageBox.Show("Deleted Successfully");
+            }
+            else
+            {
+                MessageBox.Show("Error: Somthing went wrong.");
+            }
+            _RefreshContactList();
+        }
     }
 }
